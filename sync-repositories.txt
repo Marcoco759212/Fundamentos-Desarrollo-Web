@@ -1,0 +1,6 @@
+¿Cuales son las formas de descargar cambios del repositorio remoto al repositorio local, y en qué se diferencían?
+
+con el comando git pull y con el comando git push
+
+git pull: copia los cambios del repositorio remoto al repositorio local incluyendo los branches.
+git push: solo detecta los metadatos que han cambiado del repositorio local con el repositorio remoto y los establece en el repositoriolocal
