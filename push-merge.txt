@@ -1,0 +1,2 @@
+el comando push agrega los cambios dentro del repositosio local (dentro de una branch) al repositosio remoto.
+el comando merge conbina los cambios que se han realizado entre branches distintas.
