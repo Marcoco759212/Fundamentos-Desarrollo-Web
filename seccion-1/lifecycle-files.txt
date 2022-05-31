@@ -1,0 +1,7 @@
+¿Cuáles son los diferentes estados en el ciclo de vida de un archivo, y cuándo cambió de uno a otro?
+(untracked, unmodified, modified, staged)
+
+.-En el paso 3, se creó el archivo y automaticamente entra al estado untracked.
+.-En el paso 4, se hace un add del archivo y se queda en el estado unmodified, posterior se hace un commit y el archivo deja el estado unmodified y se queda en el estado staged.
+.-En el paso 5, se modifica el archivo y como ya es reconocido por git, sabe que el estado del archivo es modified.
+.-En el paso 6, se vuelve hacer un add y el archivo pasa de ser modified a unmodified posterior se hace un commit y el archivo se queda en el estado staged.
