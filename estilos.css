@@ -311,3 +311,7 @@ table tbody tr:nth-child(even) {
 	background: #007160;
 	height: 10px;
 }
+
+ul li:nth-child(odd) {
+	color: red;
+}
