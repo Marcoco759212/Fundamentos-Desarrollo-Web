@@ -20,7 +20,7 @@
 	transition: all 0.2s;
 }
 
-.lista-navegacion li a:link {
+/* .lista-navegacion li a:link {
 	text-decoration: none;
 	color: #00b096;
 }
@@ -35,6 +35,53 @@
 
 .lista-navegacion li a:hover {
 	font-size: 20px;
+} */
+
+.lista-navegacion li {
+	width: 300px;
+
+	border-radius: 10px;
+	padding: 10px 20px;
+	background: rgb(0, 170, 255);
+	margin-bottom: 10px;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	transition: box-shadow 0.2s ease-in-out;
+}
+
+.lista-navegacion li::before {
+	content: '';
+	background: #7300ff;
+	height: 100%;
+	width: 5px;
+	position: absolute;
+	transform: scaleY(0);
+	left: 0;
+	top: 0;
+	transition: transform 0.4s, width 0.4s cubic-bezier(1, 0.01, 0, 0.98) 0.2s;
+	z-index: -1;
+}
+
+.lista-navegacion li:hover::before {
+	transform: scaleY(1);
+	width: 100%;
+}
+
+.lista-navegacion li:hover {
+	transform: scaleY(1);
+	box-shadow: 0 0 20px -5px #7300ff;
+	cursor: pointer;
+}
+
+.lista-navegacion li span {
+	color: white;
+	height: 100%;
+}
+
+.lista-navegacion li a {
+	text-decoration: none;
+	height: 100%;
 }
 
 /*--------------------------
@@ -314,4 +361,131 @@ table tbody tr:nth-child(even) {
 
 ul li:nth-child(odd) {
 	color: red;
+}
+
+/*--------------------------
+	ANIMACIONES
+--------------------------*/
+@keyframes animacion1 {
+	0% {
+		color: white;
+		transform: scale(1) translateX(0);
+	}
+
+	25% {
+		color: #00ffaa;
+		transform: scale(2) translateX(250px);
+	}
+
+	50% {
+		color: #00ffaa;
+		transform: scale(1) translateX(500px);
+	}
+
+	75% {
+		color: #00ffaa;
+		transform: scale(2) translateX(250px);
+	}
+
+	100% {
+		color: orange;
+		transform: scale(1) translateX(0);
+	}
+}
+
+.anim-1 {
+	width: 100px;
+	height: 100px;
+	background: rgb(0, 132, 255);
+	transition: all 0.5s cubic-bezier(0.04, 1.28, 1, 0), color 1s ease-in-out, font-size 0.5s ease-out,
+		width 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+	/* animation-name: animacion1; */
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	/* animation-iteration-count: infinite; */
+	animation-direction: alternate-reverse;
+}
+
+.anim-titulo-1:hover + div {
+	background: rgb(174, 0, 255);
+	color: white;
+	font-size: 30px;
+	width: 300px;
+	transform: scale(2) translateX(100px);
+}
+
+@keyframes volando {
+	0% {
+		transform: translate(1000px, 100px);
+	}
+
+	50% {
+		transform: translate(500px, 150px);
+	}
+
+	100% {
+		transform: translate(-200px, 0);
+	}
+}
+
+@keyframes volando2 {
+	0% {
+		transform: translate(1000px, 200px);
+	}
+
+	40% {
+		transform: translate(500px, 250px);
+	}
+
+	100% {
+		transform: translate(-200px, 0);
+	}
+}
+
+@keyframes volando3 {
+	0% {
+		transform: translate(1000px, 200px);
+	}
+
+	70% {
+		transform: translate(700px, 50px);
+	}
+
+	100% {
+		transform: translate(-200px, 300px);
+	}
+}
+
+.paisaje {
+	width: 100%;
+	height: 500px;
+	background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Cuesta_del_obispo_01.jpg/640px-Cuesta_del_obispo_01.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.paisaje .pajarito {
+	width: 50px;
+	animation-name: volando;
+	animation-duration: 7s;
+	animation-iteration-count: infinite;
+}
+
+.paisaje .pajarito2 {
+	width: 50px;
+	animation-name: volando2;
+	animation-duration: 7s;
+	animation-iteration-count: infinite;
+}
+
+.paisaje .pajarito3 {
+	width: 50px;
+	animation-name: volando3;
+	animation-duration: 7s;
+	animation-iteration-count: infinite;
+}
+
+.paisaje:hover .ave {
+	animation-play-state: paused;
 }
