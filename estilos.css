@@ -3,17 +3,47 @@
 	font-family: 'Roboto';
 }
 
+:root {
+	--color-primario: #0176ff;
+	--color-secundario: #158fff;
+	--color-terciario: #000000;
+	--color-bg1: #ffffff;
+	--color-bg2: #eeeeee;
+	--animacion-01: transform 0.4s, width 0.4s cubic-bezier(1, 0.01, 0, 0.98) 0.2s;
+	--sombra-01: 0 0 3px 3px rgba(255, 0, 0, 0.5);
+	--color-rgb: 100, 50, 10;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-primario: #303d4b;
+		--color-secundario: #3e97ff;
+		--color-terciario: #ffffff;
+		--color-bg1: #252e38;
+		--color-bg2: #3d4854;
+	}
+}
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
 *::selection {
 	background: #7300ff;
 	color: white;
 }
 
+body {
+	background: var(--color-bg1);
+}
+
 .lista-navegacion {
 	list-style: none;
 	padding: 0;
-}
-
-.lista-navegacion li {
 }
 
 .lista-navegacion li a {
@@ -38,11 +68,8 @@
 } */
 
 .lista-navegacion li {
-	width: 300px;
-
-	border-radius: 10px;
+	width: 100%;
 	padding: 10px 20px;
-	background: rgb(0, 170, 255);
 	margin-bottom: 10px;
 	position: relative;
 	overflow: hidden;
@@ -52,14 +79,14 @@
 
 .lista-navegacion li::before {
 	content: '';
-	background: #7300ff;
+	background: var(--color-secundario);
 	height: 100%;
 	width: 5px;
 	position: absolute;
 	transform: scaleY(0);
 	left: 0;
 	top: 0;
-	transition: transform 0.4s, width 0.4s cubic-bezier(1, 0.01, 0, 0.98) 0.2s;
+	transition: var(--animacion-01);
 	z-index: -1;
 }
 
@@ -488,4 +515,104 @@ ul li:nth-child(odd) {
 
 .paisaje:hover .ave {
 	animation-play-state: paused;
+}
+
+/*--------------------------
+	POSICIONAMIENTO
+--------------------------*/
+.padre-p {
+	background: gray;
+	width: 100%;
+	height: 300px;
+	position: relative;
+}
+
+.padre-p .hijo-p {
+	padding: 30px;
+	display: inline-block;
+	background: rgb(0, 132, 255);
+	color: white;
+	box-shadow: var(--sombra-01);
+}
+
+.hijo1 {
+	top: 100px;
+	left: 200px;
+}
+
+/* .hijo4 {
+	bottom: 0px;
+	right: 0;
+} */
+
+.hijo3 {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+}
+
+.padre-p .hijo2 {
+	position: fixed;
+	background: #7300ff;
+	bottom: 0;
+	right: 0;
+}
+
+body {
+	z-index: 0;
+	background: var(--color-bg2);
+}
+
+.sticky {
+	z-index: 1;
+}
+
+.sticky-hijo1 {
+	background: red;
+	height: 200px;
+	width: 100px;
+	position: absolute;
+}
+
+.sticky-hijo2 {
+	background: orange;
+	height: 200px;
+	width: 100px;
+	position: absolute;
+}
+
+.sticky-2 {
+	position: sticky;
+	top: 100px;
+	background: red;
+}
+
+.header {
+	background: var(--color-bg1);
+	color: var(--color-secundario);
+}
+
+.aside {
+	background: var(--color-primario);
+}
+
+.main section {
+	background: var(--color-bg1);
+	padding: 40px;
+}
+
+.main section > h3 {
+	color: var(--color-secundario);
+	font-size: 30px;
+	margin-bottom: 30px;
+	position: relative;
+}
+
+.main section > h3::before {
+	content: '';
+	background: var(--color-terciario);
+	height: 5px;
+	width: 100px;
+	position: absolute;
+	bottom: -10px;
 }
