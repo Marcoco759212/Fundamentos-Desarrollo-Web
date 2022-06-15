@@ -616,3 +616,72 @@ body {
 	position: absolute;
 	bottom: -10px;
 }
+
+/* FLEX CONTAINER */
+
+/*
+	flex-direction: column | row | row-reverse | column-reverse;
+	flex-wrap: nowrap | wrap | wrap-reverse;
+	flex-flow: <flex-direction> <flex-wrap>;
+	justify-content: flex-start | flex-end | center | space-around | space-between | space-evenly;
+	aling-items: stretch | flex-start | center | flex-end | baseline;
+	aling-content: stretch | flex-start | center | flex-end | baseline;
+	flex-basis: 10px | 25% | 5rem;
+*/
+.contenedor-flexbox {
+	background: #158fff;
+	width: 100%;
+	min-height: 700px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+}
+
+/* FLEX ITEMS */
+
+/*
+	order: numero;
+	flex-grow: number;
+	flex-shrink: 0 | 1;
+	flex-basis: px | % | rem | ems | cm | mm;
+	align-self: stretch | flex-start | flex-end | center | baseline;
+*/
+
+.hijos-flexbox {
+	background: #ffffff;
+	padding: 30px;
+	font-size: 18px;
+	margin: 10px;
+	flex-basis: 100px;
+	height: 100px;
+}
+
+.hijo-flexbox-1 {
+	/* order: 2; */
+}
+
+.hijo-flexbox-2 {
+	/* flex-grow: 3; */
+	/* order: 1; */
+}
+
+.hijo-flexbox-3 {
+	/* order: 4; */
+	/* flex-grow: 3; */
+	/* align-self: ;
+	font-size: 30px; */
+}
+
+.contenedor-principal {
+	display: flex;
+	flex-direction: row;
+}
+
+.contenedor-principal .aside {
+	width: 300px;
+	min-width: 300px;
+}
+
+.contenedor-principal .main {
+	flex-basis: auto;
+}
