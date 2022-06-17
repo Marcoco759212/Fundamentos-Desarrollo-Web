@@ -6,6 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="./estilos.css" />
+		<link rel="stylesheet" href="./reglas.css" />
+		<link rel="stylesheet" href="./responsivo.css" />
+		<link rel="stylesheet" href="./variables.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -17,6 +20,8 @@
 		<!-- HEADER -->
 		<header class="header">
 			<h1>CSS</h1>
+
+			<span class="menu">MENU</span>
 		</header>
 
 		<!-- NAVEGACIÓN -->
@@ -59,11 +64,34 @@
 					<li>
 						<a href="#flexbox"><span>Flexbox</span></a>
 					</li>
+					<li>
+						<a href="#media-queries"><span>Media queries</span></a>
+					</li>
 				</ul>
 			</aside>
 
 			<!-- CONTENIDO PRINCIPAL -->
 			<main class="main">
+				<section id="media-queries">
+					<h3>Media queries</h3>
+					<div class="media1">soy un div con media queries</div>
+					<picture class="media-picture">
+						<source
+							media="(min-width: 1200px)"
+							srcset="https://concepto.de/wp-content/uploads/2015/03/paisaje-800x409.jpg"
+						/>
+						<source
+							media="(min-width: 768px)"
+							srcset="
+								https://mott.pe/noticias/wp-content/uploads/2019/03/los-50-paisajes-maravillosos-del-mundo-para-tomar-fotos.jpg
+							"
+						/>
+						<img
+							src="https://astelus.com/wp-content/viajes/Lago-Moraine-Parque-Nacional-Banff-Alberta-Canada.jpg"
+							alt="paisaje 1"
+						/>
+					</picture>
+				</section>
 				<section class="flexbox">
 					<h3>Flexbox</h3>
 					<div class="contenedor-flexbox">

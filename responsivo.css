@@ -1,0 +1,25 @@
+.header .menu {
+	font-size: 1.6rem;
+	display: none;
+}
+
+.aside {
+	transition: all 0.2s cubic-bezier(1, 0, 0, 1);
+}
+
+.header:hover + div.contenedor-principal .aside {
+	transform: translateX(0);
+}
+
+@media screen and (max-width: 768px) {
+	.aside {
+		position: fixed;
+		z-index: 6;
+		width: 100%;
+		transform: translateX(100%);
+	}
+
+	.header .menu {
+		display: block;
+	}
+}

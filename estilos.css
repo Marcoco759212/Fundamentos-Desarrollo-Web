@@ -24,14 +24,6 @@
 	}
 }
 
-*,
-*::before,
-*::after {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-
 *::selection {
 	background: #7300ff;
 	color: white;
@@ -64,13 +56,13 @@ body {
 }
 
 .lista-navegacion li a:hover {
-	font-size: 20px;
+	font-size: 2rem;
 } */
 
 .lista-navegacion li {
 	width: 100%;
-	padding: 10px 20px;
-	margin-bottom: 10px;
+	padding: 1rem 2rem;
+	margin-bottom: 1rem;
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
@@ -81,7 +73,7 @@ body {
 	content: '';
 	background: var(--color-secundario);
 	height: 100%;
-	width: 5px;
+	width: 0.5rem;
 	position: absolute;
 	transform: scaleY(0);
 	left: 0;
@@ -97,13 +89,14 @@ body {
 
 .lista-navegacion li:hover {
 	transform: scaleY(1);
-	box-shadow: 0 0 20px -5px #7300ff;
+	box-shadow: 0 0 2rem -0.5rem #7300ff;
 	cursor: pointer;
 }
 
 .lista-navegacion li span {
 	color: white;
 	height: 100%;
+	font-size: 1.6rem;
 }
 
 .lista-navegacion li a {
@@ -157,7 +150,7 @@ a[href$='.com'] {
 
 /* Selector global */
 .contenedor1 * {
-	font-size: 30px;
+	font-size: 3rem;
 }
 
 /*--------------------------
@@ -208,25 +201,25 @@ p.rojito#p3 {
 .bg-color {
 	background-color: #00b096;
 	width: 100%;
-	height: 300px;
+	height: 30rem;
 }
 
 .bg-imagen {
 	width: 100%;
-	height: 300px;
+	height: 30rem;
 	background-image: url('https://images.vexels.com/media/users/3/230267/isolated/preview/83e373509037415d43df2861a53e3f08-lindo-gatito-semi-plano.png');
 	background-repeat: no-repeat;
-	background-size: 120px;
+	background-size: 120rem;
 	background-position: center;
 }
 
 .bg-combinado {
 	width: 100%;
-	height: 300px;
+	height: 30rem;
 	/* background-color: #008af4;
 	background-image: url('https://images.vexels.com/media/users/3/230267/isolated/preview/83e373509037415d43df2861a53e3f08-lindo-gatito-semi-plano.png');
 	background-repeat: no-repeat;
-	background-size: 120px; */
+	background-size: 12rem; */
 	background: url('https://images.vexels.com/media/users/3/230267/isolated/preview/83e373509037415d43df2861a53e3f08-lindo-gatito-semi-plano.png'),
 		radial-gradient(red, blue, orange);
 	background-repeat: no-repeat;
@@ -234,7 +227,7 @@ p.rojito#p3 {
 
 .bg-gradiente {
 	width: 100%;
-	height: 300px;
+	height: 30rem;
 	background: radial-gradient(red, blue, orange);
 }
 
@@ -242,14 +235,14 @@ p.rojito#p3 {
 	BORDES Y OUTLINE
 --------------------------*/
 .borde1 {
-	width: 200px;
-	height: 100px;
+	width: 20rem;
+	height: 10rem;
 	background: #00b096;
-	border: solid 20px green;
-	border-radius: 10px;
+	border: solid 2rem green;
+	border-radius: 1rem;
 
-	outline: solid 10px red;
-	outline-offset: 2px;
+	outline: solid 1rem red;
+	outline-offset: 0.2rem;
 }
 
 /*--------------------------
@@ -276,34 +269,34 @@ p.rojito#p3 {
 --------------------------*/
 .modelo-caja,
 .modelo-caja2 {
-	width: 300px;
-	height: 100px;
+	width: 30rem;
+	height: 10rem;
 	background: rgb(129, 129, 129);
-	padding: 20px 10px 40px 60px;
-	border: 5px solid red;
+	padding: 2rem 1rem 4rem 60px;
+	border: 0.5rem solid red;
 }
 
 .modelo-caja {
-	margin-bottom: 100px;
+	margin-bottom: 10rem;
 }
 
 .modelo-caja2 {
-	margin-top: 100px;
+	margin-top: 10rem;
 }
 
 /*--------------------------
 	PSEUDO ELEMENTOS
 --------------------------*/
 .pseudo-elementos {
-	width: 200px;
-	height: 100px;
+	width: 20rem;
+	height: 10rem;
 	position: relative;
 }
 
 .pseudo-elementos::before {
 	content: 'u';
-	width: 20px;
-	height: 10px;
+	width: 2rem;
+	height: 1rem;
 	background: red;
 }
 
@@ -319,7 +312,7 @@ p.rojito#p3 {
 
 #pseudo-elementos p::first-letter {
 	color: blue;
-	font-size: 50px;
+	font-size: 5rem;
 }
 
 #pseudo-elementos p::first-line {
@@ -328,15 +321,15 @@ p.rojito#p3 {
 
 #pseudo-elementos ul li::marker {
 	content: '👽';
-	font-size: 30px;
+	font-size: 3rem;
 }
 
 .input {
-	width: 300px;
-	height: 40px;
-	border-radius: 10px;
+	width: 30rem;
+	height: 4rem;
+	border-radius: 1rem;
 	outline: none;
-	margin-bottom: 10px;
+	margin-bottom: 1rem;
 	border: 3px solid rgb(0, 132, 255);
 }
 
@@ -354,11 +347,11 @@ p.rojito#p3 {
 
 .input:read-only {
 	background: gray;
-	border: 20px solid green;
+	border: 2rem solid green;
 }
 
 .input:focus {
-	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.1);
 }
 
 .prueba-pseudo-clases li:last-of-type {
@@ -370,11 +363,11 @@ p.rojito#p3 {
 }
 
 .prueba-pseudo-clases p:first-child {
-	font-size: 40px;
+	font-size: 4rem;
 }
 
 .prueba-pseudo-clases p:last-child {
-	font-size: 40px;
+	font-size: 4rem;
 }
 
 .prueba-pseudo-clases-2 p:nth-last-child(even) {
@@ -383,7 +376,7 @@ p.rojito#p3 {
 
 table tbody tr:nth-child(even) {
 	background: #007160;
-	height: 10px;
+	height: 1rem;
 }
 
 ul li:nth-child(odd) {
@@ -401,17 +394,17 @@ ul li:nth-child(odd) {
 
 	25% {
 		color: #00ffaa;
-		transform: scale(2) translateX(250px);
+		transform: scale(2) translateX(25rem);
 	}
 
 	50% {
 		color: #00ffaa;
-		transform: scale(1) translateX(500px);
+		transform: scale(1) translateX(50rem);
 	}
 
 	75% {
 		color: #00ffaa;
-		transform: scale(2) translateX(250px);
+		transform: scale(2) translateX(25rem);
 	}
 
 	100% {
@@ -421,8 +414,8 @@ ul li:nth-child(odd) {
 }
 
 .anim-1 {
-	width: 100px;
-	height: 100px;
+	width: 10rem;
+	height: 10rem;
 	background: rgb(0, 132, 255);
 	transition: all 0.5s cubic-bezier(0.04, 1.28, 1, 0), color 1s ease-in-out, font-size 0.5s ease-out,
 		width 1s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -436,78 +429,78 @@ ul li:nth-child(odd) {
 .anim-titulo-1:hover + div {
 	background: rgb(174, 0, 255);
 	color: white;
-	font-size: 30px;
-	width: 300px;
-	transform: scale(2) translateX(100px);
+	font-size: 3rem;
+	width: 30rem;
+	transform: scale(2) translateX(10rem);
 }
 
 @keyframes volando {
 	0% {
-		transform: translate(1000px, 100px);
+		transform: translate(100rem, 10rem);
 	}
 
 	50% {
-		transform: translate(500px, 150px);
+		transform: translate(50rem, 15rem);
 	}
 
 	100% {
-		transform: translate(-200px, 0);
+		transform: translate(-20rem, 0);
 	}
 }
 
 @keyframes volando2 {
 	0% {
-		transform: translate(1000px, 200px);
+		transform: translate(100rem, 20rem);
 	}
 
 	40% {
-		transform: translate(500px, 250px);
+		transform: translate(50rem, 25rem);
 	}
 
 	100% {
-		transform: translate(-200px, 0);
+		transform: translate(-20rem, 0);
 	}
 }
 
 @keyframes volando3 {
 	0% {
-		transform: translate(1000px, 200px);
+		transform: translate(100rem, 20rem);
 	}
 
 	70% {
-		transform: translate(700px, 50px);
+		transform: translate(70rem, 5rem);
 	}
 
 	100% {
-		transform: translate(-200px, 300px);
+		transform: translate(-20rem, 30rem);
 	}
 }
 
 .paisaje {
 	width: 100%;
-	height: 500px;
-	background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Cuesta_del_obispo_01.jpg/640px-Cuesta_del_obispo_01.jpg');
+	height: 50rem;
+	background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Cuesta_del_obispo_01.jpg/64rem-Cuesta_del_obispo_01.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 }
 
 .paisaje .pajarito {
-	width: 50px;
+	width: 5rem;
 	animation-name: volando;
 	animation-duration: 7s;
 	animation-iteration-count: infinite;
 }
 
 .paisaje .pajarito2 {
-	width: 50px;
+	width: 5rem;
 	animation-name: volando2;
 	animation-duration: 7s;
 	animation-iteration-count: infinite;
 }
 
 .paisaje .pajarito3 {
-	width: 50px;
+	width: 5rem;
 	animation-name: volando3;
 	animation-duration: 7s;
 	animation-iteration-count: infinite;
@@ -523,12 +516,12 @@ ul li:nth-child(odd) {
 .padre-p {
 	background: gray;
 	width: 100%;
-	height: 300px;
+	height: 30rem;
 	position: relative;
 }
 
 .padre-p .hijo-p {
-	padding: 30px;
+	padding: 3rem;
 	display: inline-block;
 	background: rgb(0, 132, 255);
 	color: white;
@@ -536,8 +529,8 @@ ul li:nth-child(odd) {
 }
 
 .hijo1 {
-	top: 100px;
-	left: 200px;
+	top: 10rem;
+	left: 20rem;
 }
 
 /* .hijo4 {
@@ -547,8 +540,8 @@ ul li:nth-child(odd) {
 
 .hijo3 {
 	position: absolute;
-	top: 100px;
-	left: 100px;
+	top: 10rem;
+	left: 10rem;
 }
 
 .padre-p .hijo2 {
@@ -569,21 +562,21 @@ body {
 
 .sticky-hijo1 {
 	background: red;
-	height: 200px;
-	width: 100px;
+	height: 20rem;
+	width: 10rem;
 	position: absolute;
 }
 
 .sticky-hijo2 {
 	background: orange;
-	height: 200px;
-	width: 100px;
+	height: 20rem;
+	width: 10rem;
 	position: absolute;
 }
 
 .sticky-2 {
 	position: sticky;
-	top: 100px;
+	top: 10rem;
 	background: red;
 }
 
@@ -592,30 +585,38 @@ body {
 	color: var(--color-secundario);
 }
 
+.header h1 {
+	font-size: 3rem;
+}
+
 .aside {
 	background: var(--color-primario);
 }
 
 .main section {
 	background: var(--color-bg1);
-	padding: 40px;
+	padding: 4rem;
 }
 
 .main section > h3 {
 	color: var(--color-secundario);
-	font-size: 30px;
-	margin-bottom: 30px;
+	font-size: 3rem;
+	margin-bottom: 3rem;
 	position: relative;
 }
 
 .main section > h3::before {
 	content: '';
 	background: var(--color-terciario);
-	height: 5px;
-	width: 100px;
+	height: 0.5rem;
+	width: 10rem;
 	position: absolute;
-	bottom: -10px;
+	bottom: -1rem;
 }
+
+/*--------------------------
+	FLEXBOX
+--------------------------*/
 
 /* FLEX CONTAINER */
 
@@ -626,12 +627,12 @@ body {
 	justify-content: flex-start | flex-end | center | space-around | space-between | space-evenly;
 	aling-items: stretch | flex-start | center | flex-end | baseline;
 	aling-content: stretch | flex-start | center | flex-end | baseline;
-	flex-basis: 10px | 25% | 5rem;
+	flex-basis: 1rem | 25% | 5rem;
 */
 .contenedor-flexbox {
 	background: #158fff;
 	width: 100%;
-	min-height: 700px;
+	min-height: 70rem;
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
@@ -649,11 +650,11 @@ body {
 
 .hijos-flexbox {
 	background: #ffffff;
-	padding: 30px;
-	font-size: 18px;
-	margin: 10px;
-	flex-basis: 100px;
-	height: 100px;
+	padding: 3rem;
+	font-size: 1.8rem;
+	margin: 1rem;
+	flex-basis: 10rem;
+	height: 10rem;
 }
 
 .hijo-flexbox-1 {
@@ -669,7 +670,7 @@ body {
 	/* order: 4; */
 	/* flex-grow: 3; */
 	/* align-self: ;
-	font-size: 30px; */
+	font-size: 3rem; */
 }
 
 .contenedor-principal {
@@ -678,10 +679,88 @@ body {
 }
 
 .contenedor-principal .aside {
-	width: 300px;
-	min-width: 300px;
+	min-width: 25rem;
 }
 
-.contenedor-principal .main {
-	flex-basis: auto;
+/*--------------------------
+	MEDIA QUERIES
+--------------------------*/
+
+/*
+	@media screen and (max-width: px)
+	@media screen and (min-width: px)
+	@media screen and (width: px)
+	@media screen and (max-height: px)
+	@media screen and (min-height: px)
+	@media screen and (height: px)
+	@media screen and (orientation: portrait | landscape)
+	@media print
+	@media all
+*/
+
+.media1 {
+	width: 50rem;
+	height: 10rem;
+	background: #007160;
+	color: #ffffff;
+}
+
+/* laptops, pantallas, grandes */
+@media screen and (min-width: 1200px) {
+	.media1 {
+		width: 70rem;
+		height: 15rem;
+		text-transform: uppercase;
+	}
+}
+
+/* laptops, pantalladas medianas */
+@media screen and (min-width: 992px) {
+	.media1 {
+		width: 30rem;
+		height: 7rem;
+		background: #00ffaa !important;
+		color: #000000;
+	}
+}
+
+/* Tabletas medianas */
+@media screen and (min-width: 768px) {
+	.media1 {
+		background: purple;
+		box-shadow: 0 0 1rem 1rem rgba(255, 0, 0, 0.5);
+	}
+}
+
+/* Tabletas, telefonos */
+@media screen and (min-width: 600px) {
+	.media1 {
+		background: #158fff;
+		font-size: 3rem;
+		border-radius: 1rem;
+	}
+}
+
+/* Telefonos */
+@media screen and (max-width: 600px) {
+	.media1 {
+		background: #000000;
+		color: #ffffff;
+	}
+
+	.header {
+		background: #000000;
+	}
+}
+
+/* Telefonos modernos */
+@media screen and (max-width: 400px) {
+	.media1 {
+		background: yellow;
+		color: black;
+	}
+}
+
+.media-picture img {
+	width: 50rem;
 }
