@@ -7,6 +7,15 @@
 	font-size: 62.5%;
 }
 
+/* pantallas 4K */
+@media screen and (min-width: 3000px) {
+	*,
+	*::before,
+	*::after {
+		font-size: 130%;
+	}
+}
+
 /* laptops, pantallas, grandes */
 @media screen and (max-width: 1200px) {
 	*,
@@ -57,6 +66,13 @@
 	*,
 	*::before,
 	*::after {
-		font-size: 30.5%;
+		font-size: 45%;
 	}
+}
+
+p,
+span,
+td {
+	font-size: 2rem;
+	color: var(--color-terciario);
 }

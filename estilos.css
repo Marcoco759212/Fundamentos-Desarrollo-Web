@@ -89,7 +89,7 @@ body {
 
 .lista-navegacion li:hover {
 	transform: scaleY(1);
-	box-shadow: 0 0 2rem -0.5rem #7300ff;
+	box-shadow: 0 0 2rem -0.5rem #d1d1d1;
 	cursor: pointer;
 }
 
@@ -596,6 +596,9 @@ body {
 .main section {
 	background: var(--color-bg1);
 	padding: 4rem;
+	border-radius: 2rem;
+	overflow: auto;
+	min-height: 50rem;
 }
 
 .main section > h3 {
@@ -746,10 +749,6 @@ body {
 	.media1 {
 		background: #000000;
 		color: #ffffff;
-	}
-
-	.header {
-		background: #000000;
 	}
 }
 

@@ -20,8 +20,64 @@
 		<!-- HEADER -->
 		<header class="header">
 			<h1>CSS</h1>
-
-			<span class="menu">MENU</span>
+			<div class="usuario">
+				<img
+					class="usuario__avatar"
+					src="https://img.unocero.com/2020/07/Super-Mario-Bros-verdadera-nacionalidad.jpg"
+					alt="Diego Salas"
+				/>
+				<div class="usuario__menu">
+					<a href="#menu-movil">
+						<input type="checkbox" class="usuario__menu-disparador" />
+						<span class="usuario__menu-icon"></span>
+					</a>
+					<aside id="menu-movil" class="aside aside-movil">
+						<ul class="lista-navegacion">
+							<li class="lista-navegacion__item">
+								<a class="lista-navegacion__item-link" href="#selectores"
+									><span>Selectores</span></a
+								>
+							</li>
+							<li>
+								<a href="#cascada-y-especificidad"><span>Cascada y especificidad</span></a>
+							</li>
+							<li>
+								<a href="#colores"><span>Colores</span></a>
+							</li>
+							<li>
+								<a href="#backgrounds"><span>Backgrounds</span></a>
+							</li>
+							<li>
+								<a href="#bordes-y-outline"><span>Bordes y Ouline</span></a>
+							</li>
+							<li>
+								<a href="#combinadores"><span>Combinadores</span></a>
+							</li>
+							<li>
+								<a href="#modelo-de-caja"><span>Modelo de caja</span></a>
+							</li>
+							<li>
+								<a href="#pseudo-elementos"><span>Pseudo elementos</span></a>
+							</li>
+							<li>
+								<a href="#pseudo-clases"><span>Pseudo clases</span></a>
+							</li>
+							<li>
+								<a href="#animaciones"><span>Animaciones</span></a>
+							</li>
+							<li>
+								<a href="#posicionamiento"><span>Posicionamiento</span></a>
+							</li>
+							<li>
+								<a href="#flexbox"><span>Flexbox</span></a>
+							</li>
+							<li>
+								<a href="#media-queries"><span>Media queries</span></a>
+							</li>
+						</ul>
+					</aside>
+				</div>
+			</div>
 		</header>
 
 		<!-- NAVEGACIÓN -->
@@ -92,7 +148,7 @@
 						/>
 					</picture>
 				</section>
-				<section class="flexbox">
+				<section id="flexbox">
 					<h3>Flexbox</h3>
 					<div class="contenedor-flexbox">
 						<div class="hijos-flexbox hijo-flexbox-1">1</div>
