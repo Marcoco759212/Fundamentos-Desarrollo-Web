@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 62.5%;
+	font-family: 'Roboto';
+}
+
+.header,
+footer{
+	font-size: 4rem;
+	text-align: center;
+	position: sticky;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+header{
+	height: 5rem;
+	max-height: 5rem;
+	background-color: #D9D9D9;
+	top: 0;
+}
+
+footer{
+	height: 3.5rem;
+	max-height: 3.5rem;
+	bottom: 0;
+}
+
+footer > h2{
+	background-color: #D9D9D9;
+	width: 30rem;
+	height: 100%;
+	border-top-left-radius: 1rem;
+	border-top-right-radius: 1rem;
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.cuadrados{
+	width: 100%;
+	height: 100rem;
+}
+
+.content{
+	width: 100%;
+	height: calc(100% - 5rem);
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content div{
+	width: 10rem;
+	height: 10rem;
+	font-size: 5rem;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+body:hover > footer>h2,
+body:hover .cuadrado1,
+body:hover .cuadrado2,
+body:hover .cuadrado3,
+body:hover .cuadrado4,
+body:hover .cuadrado5{
+	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
+}
+
+
+.cuadrado1{
+	top: 0;
+	left: 0;
+	background-color: #FF0000;
+}
+
+.cuadrado2{
+	top: 0;
+	right: 0;
+	background-color: #FFC700;
+}
+
+.cuadrado3{
+	background-color: #78D600;
+}
+
+.cuadrado4{
+	bottom: 0;
+	left: 0;
+	background-color: #00A3FF;
+}
+
+.cuadrado5{
+	bottom: 0;
+	right: 0;
+	background-color: #8F00FF;
+}
