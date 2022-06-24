@@ -70,7 +70,7 @@ const sumarDosNumeros = (a, b) => {
 
 sumarDosNumeros(1, 5) // 6
 ```
-### Declaración "return" y Scope
+### Declaración "return"
 
 En el ejemplo anterior presentamos la declaración `return`. No vamos a usar `console.log` con todo lo que salga de una función. Lo más probable es que queramos devolver algo. En este caso es la suma de los dos números. Piense en la declaración de retorno ("return") como la única forma en que los datos escapan de una función. No se puede acceder a nada más que a lo que se devuelve fuera de la función. También tenga en cuenta que cuando una función golpea una declaración de retorno, la función detiene inmediatamente lo que está haciendo y "devuelve" lo especificado.
 
