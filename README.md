@@ -23,4 +23,4 @@ La fórmula para convertir de Celsius a Fahrenheit es: (grados * 9 / 5) + 32
 La fórmula para convertir de Fahrenheit a Celsius es: (grados - 32) * 5 / 9
 
 ## Recursos: 
-* [Notas de la sesión](https://github.com/ActoSoft/Fundamentos-Desarrollo-Web/tree/sesion-16/js-3-notes)
+* [Notas de la sesión](https://github.com/ActoSoft/Fundamentos-Desarrollo-Web/tree/sesion-16/js-2-notes#introducci%C3%B3n-a-las-funciones)
