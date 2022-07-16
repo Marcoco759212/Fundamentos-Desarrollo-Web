@@ -59,7 +59,7 @@ const generateTaskElements = (task) => {
   const spanElement = generateSpanElement(task)
   const completeTaskButtonElement = generateCompleteTaskButtonElement(task)
   const deleteTaskButtonElement = generateDeleteTaskButtonElement(task)
-  listItemElement.append(spanElement, completeTaskButtonElement, deleteTaskButtonElement)
+  listItemElement.append(completeTaskButtonElement, spanElement, deleteTaskButtonElement)
   tasksContainer.appendChild(listItemElement)
 }
 
@@ -79,14 +79,16 @@ const generateCompleteTaskButtonElement = (task) => {
   const completeTaskButtonElement = document.createElement('button')
   completeTaskButtonElement.setAttribute('data-index', task.id)
   completeTaskButtonElement.setAttribute('class', `button btn${isTaskCompleted(task) ? '' : '-outline'}-primary`)
-  completeTaskButtonElement.textContent = isTaskCompleted(task) ? '🔴' : '⚪️'
+  //completeTaskButtonElement.textContent = isTaskCompleted(task) ? '🔴' : '⚪️'
+  completeTaskButtonElement.innerHTML = isTaskCompleted(task) ? '&#x2713;' : ''
   addEventListenerToButton(completeTaskButtonElement, 'complete')
   return completeTaskButtonElement
 }
 
 const generateDeleteTaskButtonElement = (task) => {
   const deleteTaskButtonElement = document.createElement('button')
-  deleteTaskButtonElement.textContent = '🗑'
+  // deleteTaskButtonElement.textContent = '🗑'
+  deleteTaskButtonElement.innerHTML = '&#x2715;'
   deleteTaskButtonElement.setAttribute('data-index', task.id)
   deleteTaskButtonElement.setAttribute('class', 'button btn-danger')
   addEventListenerToButton(deleteTaskButtonElement, 'delete')

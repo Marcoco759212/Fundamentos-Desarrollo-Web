@@ -97,3 +97,148 @@ header {
   color: rgb(var(--purple));
   box-shadow: 0rem 0rem 2rem 0rem rgba(var(--primary-color), 0.475);;
 }
+
+.button.btn-primary {
+  background: linear-gradient(45deg, var(--gradint-01));
+  color: rgb(var(--white))
+}
+
+.button.btn-primary:hover {
+  box-shadow: 0rem 0rem 2rem 0rem rgba(var(--primary-color), 0.475);;
+}
+
+.button.btn-outline-primary {
+  background: linear-gradient(45deg, var(--gradint-01));
+  color: rgb((var(--blue)));
+  position: relative;
+}
+
+.button.btn-outline-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 0.4rem);
+  height: calc(100% - 0.4rem);
+  background: rgb(var(--white));
+  color: rgb((var(--blue)));
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.button.btn-outline-primary:hover {
+  box-shadow: 0rem 0rem 2rem 0rem rgba(var(--primary-color), 0.475);
+  color:rgb(var(--purple));
+}
+
+.button.btn-danger {
+  background: linear-gradient(45deg, var(--gradint-02));
+  color: rgb(var(--white));
+}
+
+.button.btn-danger:hover {
+  box-shadow: 0rem 0rem 2rem 0rem rgba(var(--primary-color), 0.475);
+}
+
+.button.btn-text {
+  background: transparent;
+  color: rgb(var(--blue));
+  height: unset;
+  padding: 1rem;
+}
+
+.button.btn-text:hover {
+  text-decoration: underline;
+  color: rgb(var(--purple));
+}
+
+/* List styles */
+#list-todo {
+  display: flex;
+  flex-direction: column;
+  max-height: 30rem;
+  overflow: auto;
+}
+
+#list-todo li {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  column-gap: 1.5rem;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  border-radius: var(--border-radius);
+}
+
+#list-todo li:hover {
+  background-color: rgba(var(--black), 0.05);
+}
+
+#list-todo li span {
+  width: 100%;
+  word-break: break-all; /* Esta propiedad es para que si el texto es muy largo no se desborde*/
+  font-size: 1.6rem;
+  color: rgb(var(--black));
+  transition: all 0.2s ease-in-out;
+}
+
+#list-todo li span[style*='line-through'] {
+  color: rgb(var(--blue));
+}
+
+#list-todo li button {
+  border-radius: 50rem;
+  font-size: 2rem;
+  font-weight: 900;
+  padding: 0;
+  height: 3.5rem;
+  width: 3.5rem;
+  min-width: 3.5rem;
+}
+
+/* Layout styles*/
+main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 100%;
+  max-width: 70rem;
+}
+
+main .form-to-do {
+  display: flex;
+  gap: 1rem 2rem;
+}
+
+main .list-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: rgb(var(--white));
+  border-radius: var(--border-radius);
+  box-shadow: 0 0.5rem 2rem -0.3rem rgba(var(--black), 0.1) ;
+}
+
+main .list-container .list-container__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem 2rem;
+  border-top: 0.1rem solid rgba(var(--black), 0.1);
+  padding-top: 1.5rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1.6rem;
+  position: fixed;
+  bottom: 0;
+  background: rgb(var(--white));
+  box-shadow: 0 -0.5rem 2rem -0.3rem rgba(var(--black), 0.1);
+}
+
+footer span {
+  font-size: 1.6rem;
+}
