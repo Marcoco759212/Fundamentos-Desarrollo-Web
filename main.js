@@ -2,6 +2,9 @@
 const taskDescInput = document.querySelector('#todo-input')
 const addTaskButton = document.querySelector('#add-todo')
 const tasksContainer = document.querySelector('#list-todo')
+const completeAllTasksButton = document.querySelector('#complete-all-tasks')
+const deleteAllTasksButton = document.querySelector('#clear-tasks')
+const listContainer = document.querySelector('.list-container')
 
 // == Global variable =============================================================
 let tasksList = []
@@ -37,13 +40,25 @@ const addTask = (description, isCompleted = false) => {
 const toggleCompleteTask = (taskId) => {
   const task = tasksList.find((taskList) => taskList.id === taskId)
   task.isCompleted = !task.isCompleted
-  localStorage.setItem('tasks', JSON.stringify(tasksList))
+  saveTasksInStorage(tasksList)
+}
+
+const completeAllTasks = () => {
+  tasksList.forEach(task => {
+    task.isCompleted = true
+  })
+  saveTasksInStorage(tasksList)
 }
 
 const deleteTask = (taskId) => {
   const taskIndex = tasksList.findIndex((taskList) => taskList.id === taskId)
   tasksList.splice(taskIndex, 1)
-  localStorage.setItem('tasks', JSON.stringify(tasksList))
+  saveTasksInStorage(tasksList)
+}
+
+const clearTasks = () => {
+  tasksList = []
+  saveTasksInStorage(tasksList)
 }
 
 const isTaskCompleted = (task) => task.isCompleted
@@ -52,6 +67,12 @@ const isTaskCompleted = (task) => task.isCompleted
 const renderTasks = () => {
   clearNodeChilds(tasksContainer)
   tasksList.forEach(generateTaskElements)
+
+  if (tasksList.length === 0) {
+    listContainer.setAttribute('style', 'display: none;');
+  } else {
+    listContainer.setAttribute('style', 'display: flex;');
+  }
 }
 
 const generateTaskElements = (task) => {
@@ -97,22 +118,39 @@ const generateDeleteTaskButtonElement = (task) => {
 
 // -- Event Listeners -------------------------------------------------------------
 
+// Event Listener to get the tasks from local storage
+// when the DOM content is loaded (i.e. page is ready)
 document.addEventListener('DOMContentLoaded', () => {
-  const data = getTasksFromStorage()
-  if (!data) {
+  const tasks = getTasksFromStorage()
+  if (!tasks) {
     saveTasksInStorage(tasksList/*[] by default*/)
   } else {
-    tasksList = data
+    tasksList = tasks
     renderTasks()
   }
 })
 
+// event listener to add task when button is clicked
 addTaskButton.addEventListener('click', () => {
   handleAddTask()
 })
 
+// event listener to add task when button is clicked
 taskDescInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') handleAddTask()
+})
+
+// event listener to complete all tasks when button is clicked
+completeAllTasksButton.addEventListener('click', () => {
+  completeAllTasks()
+  renderTasks()
+})
+
+deleteAllTasksButton.addEventListener('click', () => {
+  if (confirm('¿Estás seguro de eliminar TODAS las tareas?')) {
+    clearTasks()
+    renderTasks()
+  }
 })
 
 const addEventListenerToButton = (button, action) => {
@@ -127,5 +165,8 @@ const addEventListenerToButton = (button, action) => {
 
 // -- Data persistency on the browser ---------------------------------------------
 const tasksStorageKey = 'tasks'
+
 const getTasksFromStorage = () => JSON.parse(localStorage.getItem(tasksStorageKey))
-const saveTasksInStorage = (tasks) => localStorage.setItem(tasksStorageKey, JSON.stringify(tasks))
+
+const saveTasksInStorage = (tasks) =>
+  localStorage.setItem(tasksStorageKey, JSON.stringify(tasks))
