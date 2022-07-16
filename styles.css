@@ -24,6 +24,14 @@
   font-family: 'Roboto', sans-serif;
 }
 
+@media screen and (max-width: 600px) {
+  *,
+  *::after,
+  *::before {
+    font-size: 55%;
+  }
+}
+
 /* Body styles */
 body {
   display: flex;
@@ -48,6 +56,12 @@ body::before {
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 600px) {
+  body::before {
+    height: 50vh;
+  }
+}
+
 /* Header styles */
 header {
   padding: 4rem 1rem;
@@ -56,6 +70,15 @@ header {
 .title {
   font-size: 4rem;
   color: rgb(var(--white));
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 2rem;
+  }
+  .title {
+    font-size: 3rem;
+  }
 }
 
 /* Input styles */
@@ -196,6 +219,12 @@ header {
   min-width: 3.5rem;
 }
 
+@media screen and (max-width: 600px) {
+  #list-todo {
+    max-height: calc(62vh - 10rem);
+  }
+}
+
 /* Layout styles*/
 main {
   display: flex;
@@ -241,4 +270,23 @@ footer {
 
 footer span {
   font-size: 1.6rem;
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    width: 100%;
+  }
+
+  .form-to-do {
+      flex-direction: column;
+      padding: 0 2rem;
+  }
+
+  .list-container {
+    padding: 1rem;
+  }
+
+  .list-container__actions {
+    flex-direction: column;
+  }
 }
