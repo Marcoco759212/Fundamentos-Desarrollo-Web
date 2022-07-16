@@ -2,8 +2,6 @@
 const taskDescInput = document.querySelector('#todo-input')
 const addTaskButton = document.querySelector('#add-todo')
 const tasksContainer = document.querySelector('#list-todo')
-const completeAllTasksButton = document.querySelector('#complete-all-tasks')
-const deleteAllTasksButton = document.querySelector('#clear-tasks')
 
 // == Global variable =============================================================
 let tasksList = []
@@ -33,31 +31,19 @@ const generateRandomId = () => String(Math.random() * 1000000)
 // -- Task - based ----------------------------------------------------------------
 const addTask = (description, isCompleted = false) => {
   tasksList.push({ id: generateRandomId(), description, isCompleted })
-  saveTasksIntoStorage(tasksList)
+  saveTasksInStorage(tasksList)
 }
 
 const toggleCompleteTask = (taskId) => {
   const task = tasksList.find((taskList) => taskList.id === taskId)
   task.isCompleted = !task.isCompleted
-  saveTasksIntoStorage(tasksList)
-}
-
-const completeAllTasks = () => {
-  tasksList.forEach(task => {
-    task.isCompleted = true
-  })
-  saveTasksIntoStorage(tasksList)
+  localStorage.setItem('tasks', JSON.stringify(tasksList))
 }
 
 const deleteTask = (taskId) => {
   const taskIndex = tasksList.findIndex((taskList) => taskList.id === taskId)
   tasksList.splice(taskIndex, 1)
-  saveTasksIntoStorage(tasksList)
-}
-
-const clearTasks = () => {
-  tasksList = []
-  saveTasksIntoStorage(tasksList)
+  localStorage.setItem('tasks', JSON.stringify(tasksList))
 }
 
 const isTaskCompleted = (task) => task.isCompleted
@@ -92,6 +78,7 @@ const generateSpanElement = (task) => {
 const generateCompleteTaskButtonElement = (task) => {
   const completeTaskButtonElement = document.createElement('button')
   completeTaskButtonElement.setAttribute('data-index', task.id)
+  completeTaskButtonElement.setAttribute('class', `button btn${isTaskCompleted(task) ? '' : '-outline'}-primary`)
   completeTaskButtonElement.textContent = isTaskCompleted(task) ? '🔴' : '⚪️'
   addEventListenerToButton(completeTaskButtonElement, 'complete')
   return completeTaskButtonElement
@@ -101,45 +88,29 @@ const generateDeleteTaskButtonElement = (task) => {
   const deleteTaskButtonElement = document.createElement('button')
   deleteTaskButtonElement.textContent = '🗑'
   deleteTaskButtonElement.setAttribute('data-index', task.id)
+  deleteTaskButtonElement.setAttribute('class', 'button btn-danger')
   addEventListenerToButton(deleteTaskButtonElement, 'delete')
   return deleteTaskButtonElement
 }
 
 // -- Event Listeners -------------------------------------------------------------
 
-// Event Listener to get the tasks from local storage
-// when the DOM content is loaded (i.e. page is ready)
 document.addEventListener('DOMContentLoaded', () => {
-  const tasks = getTasksFromStorage()
-  if (/*tasks === null*/ !tasks) {
-    saveTasksIntoStorage(tasksList/*default: []*/)
+  const data = getTasksFromStorage()
+  if (!data) {
+    saveTasksInStorage(tasksList/*[] by default*/)
   } else {
-    tasksList = tasks
+    tasksList = data
     renderTasks()
   }
 })
 
-// event listener to add task when button is clicked
 addTaskButton.addEventListener('click', () => {
   handleAddTask()
 })
 
-// event listener to add task when Enter key is press
 taskDescInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') handleAddTask()
-})
-
-// event listener to complete all tasks when button is clicked
-completeAllTasksButton.addEventListener('click', () => {
-  completeAllTasks()
-  renderTasks()
-})
-
-deleteAllTasksButton.addEventListener('click', () => {
-  if (confirm('¿Estás seguro de eliminar TODAS las tareas?')) {
-    clearTasks()
-    renderTasks()
-  }
 })
 
 const addEventListenerToButton = (button, action) => {
@@ -152,11 +123,7 @@ const addEventListenerToButton = (button, action) => {
   })
 }
 
-// -- Local Storage ---------------------------------------------------------------
+// -- Data persistency on the browser ---------------------------------------------
 const tasksStorageKey = 'tasks'
-
 const getTasksFromStorage = () => JSON.parse(localStorage.getItem(tasksStorageKey))
-
-const saveTasksIntoStorage = (tasks/*array*/) => {
-  localStorage.setItem(tasksStorageKey, JSON.stringify(tasks))
-}
+const saveTasksInStorage = (tasks) => localStorage.setItem(tasksStorageKey, JSON.stringify(tasks))

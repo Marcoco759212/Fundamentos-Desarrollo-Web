@@ -1,0 +1,99 @@
+/* Initial config */
+
+:root {
+  --primary-color: 255, 255, 255;
+	--secondary-color: 139, 0, 204;
+	--white: 255, 255, 255;
+	--black: 0, 0, 0;
+	--purple: 129, 65, 239;
+	--blue: 13, 142, 255;
+	--yellow: 255, 120, 66;
+	--red: 252, 55, 0;
+	--gradint-01: rgba(var(--purple), 0.9), rgba(var(--blue), 0.8);
+	--gradint-02: rgb(var(--red)), rgb(var(--yellow));
+	--border-radius: 0.5rem;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Body styles */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30rem;
+  z-index: -1;
+  background: linear-gradient(to right, var(--gradint-01)),
+    url('https://fondosmil.com/fondo/2257.jpg');
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+/* Header styles */
+header {
+  padding: 4rem 1rem;
+}
+
+.title {
+  font-size: 4rem;
+  color: rgb(var(--white));
+}
+
+/* Input styles */
+.input {
+  width: 100%;
+  height: 5rem;
+  font-size: 1.8rem;
+  padding: 0 1.5rem;
+  border-radius: var(--border-radius);
+  border: none;
+  border-bottom: 0.2rem solid rgb(var(--primary-color));
+  background: rgb(var(--white));
+  outline: none;
+  transition: all 0.2s linear;
+}
+
+.input:focus {
+  box-shadow: 0rem 0rem 2rem 0rem rgba(var(--primary-color), 0.475);
+}
+
+/* Button styles */
+.button {
+  height: 5rem;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  border-radius: var(--border-radius);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button.btn-contrast {
+  background: rgb(var(--white));
+  color:rgb(var(--blue));
+}
+
+.button.btn-contrast:hover {
+  color: rgb(var(--purple));
+  box-shadow: 0rem 0rem 2rem 0rem rgba(var(--primary-color), 0.475);;
+}
