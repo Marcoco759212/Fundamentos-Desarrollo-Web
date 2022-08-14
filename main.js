@@ -132,7 +132,7 @@ const renderTasks = () => {
   clearNodeChilds(tasksContainer)
   tasksList.forEach(generateTaskElements)
 
-  editFlag === true ? setLabelValue(addToAllTasks, 'editar lista') : setLabelValue(addToAllTasks, 'agregarg lista')
+  editFlag === true ? setLabelValue(addToAllTasks, 'editar lista') : setLabelValue(addToAllTasks, 'agregar lista')
   if (tasksList.length === 0) {
     listContainer.setAttribute('style', 'display: none;');
   } else {
